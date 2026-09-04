@@ -103,4 +103,4 @@ jobs:
           loadTestResource: ${{ env.LOAD_TEST_RESOURCE}}
           resourceGroup: ${{ env.RESOURCE_GROUP }}
           env: |
-          webapp: ${{ env.AZURE_WEBAPP_NAME }}.azurewebsites.net
+            webapp: ${{ env.AZURE_WEBAPP_NAME }}.azurewebsites.net
