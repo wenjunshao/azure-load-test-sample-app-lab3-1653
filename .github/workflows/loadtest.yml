@@ -103,4 +103,16 @@ jobs:
           loadTestResource: ${{ env.LOAD_TEST_RESOURCE}}
           resourceGroup: ${{ env.RESOURCE_GROUP }}
           env: |
-            webapp: ${{ env.AZURE_WEBAPP_NAME }}.azurewebsites.net
+            [
+              {
+              "name": "webapp",
+              "value": "${{ env.AZURE_WEBAPP_NAME }}.azurewebsites.net"
+              }
+            ]
+
+      # upload the published website code artifacts
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v4
+        with:
+          name: loadTestResults
+          path: ${{github.workspace}}/loadTest
